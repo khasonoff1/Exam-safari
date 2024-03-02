@@ -1,45 +1,49 @@
 "use client"
 
-import Image from "next/image"
+import Image from "next/image";
+import SwiperCore, { Pagination, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import "swiper/css";
 import "swiper/css/pagination";
+
 import SwiperImg from "@/assets/heroImg.png";
+
+SwiperCore.use([Pagination, A11y, Autoplay]);
 
 const Slider = () => {
     return (
         <Swiper
-            modules={[Pagination, A11y, Autoplay]}
             spaceBetween={50}
             slidesPerView={1}
             autoplay={{ delay: 2000 }}
             pagination={{ clickable: true }}
         >
             <SwiperSlide>
-                <div className="container mx-auto sliderBg mt-[110px]">
+                <div className="container mx-auto sliderBg relative">
                     <div className="flex items-center justify-center">
-                        <Image className={"max-h-[600px]"} src={SwiperImg} alt="Img" />
+                        <Image className="max-h-screen" src={SwiperImg} alt="img" />
                     </div>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className="container mx-auto sliderBg mt-[110px]">
+                <div className="container mx-auto sliderBg relative">
                     <div className="flex items-center justify-center">
-                        <Image className={"max-h-[600px]"} src={SwiperImg} alt="Img" />
+                        <Image className="max-h-screen" src={SwiperImg} alt="img" />
                     </div>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className="container mx-auto sliderBg mt-[110px]">
+                <div className="container mx-auto sliderBg relative">
                     <div className="flex items-center justify-center">
-                        <Image className={"max-h-[600px]"} src={SwiperImg} alt="Img" />
+                        <Image className="max-h-screen" src={SwiperImg} alt="img" />
                     </div>
                 </div>
             </SwiperSlide>
             <SwiperSlide>
-                <div className="container mx-auto sliderBg mt-[110px]">
+                <div className="container mx-auto sliderBg relative">
                     <div className="flex items-center justify-center">
-                        <Image className={"max-h-[600px]"} src={SwiperImg} alt="Img" />
+                        <Image className="max-h-screen" src={SwiperImg} alt="img" />
                     </div>
                 </div>
             </SwiperSlide>
@@ -47,4 +51,4 @@ const Slider = () => {
     )
 }
 
-export default Slider
+export default Slider;
