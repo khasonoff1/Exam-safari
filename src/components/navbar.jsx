@@ -2,20 +2,33 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation';
 import Logo from '@/assets/Logo.svg'
+import Login from '@/assets/Login.svg'
+import Order from '@/assets/Order.svg'
+import Favorites from '@/assets/Favorites.svg'
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
+    const router = useRouter();
+    const [currentPath, setCurrentPath] = useState("");
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        setCurrentPath(router.pathname);
+    }, [router.pathname]);
+
     return (
         <header
             className={
-                location.pathname === "/"
-                    ? "absolute top-[25px]  left-0 w-full z-10"
-                    : "sticky top-0  left-0"
+                currentPath === "/"
+                    ? "absolute top-[25px] left-0 w-full bg-white z-50"
+                    : "sticky top-0 left-0 bg-[#F5F5F5] z-50"
             }
         >
             <nav
                 className={
-                    location.pathname === "/"
+                    currentPath === "/"
                         ? "bg-white w-full py-[15px]"
                         : "bg-[#F5F5F5] w-full py-[15px]"
                 }
@@ -54,23 +67,35 @@ const Navbar = () => {
                         <form>
                             <label className="flex items-center gap-3">
                                 <input
-                                    type="text"
+                                    type="search"
                                     placeholder="Search..."
                                     className="border-b-2 px-2 py-1 focus:outline-none bg-transparent"
                                 />
-                                <span className="text-black text-xl block pt-1 cursor-pointer">
-                                    <ion-icon name="search"></ion-icon>
-                                </span>
                             </label>
                         </form>
-                        <Link className="text-[18px] block  pt-1 icons" href="login">
-                            <ion-icon name="person"></ion-icon>
+                        <Link className="text-[18px] block pt-1 icons" href="/login">
+                            <Image
+                                src={Login}
+                                alt="login"
+                                className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
+                                onLoadingComplete={() => setIsLoading(false)} 
+                            />
                         </Link>
-                        <Link className="text-[18px] block  pt-1 icons" href="addtocart">
-                            <ion-icon name="cart"></ion-icon>
+                        <Link className="text-[18px] block pt-1 icons" href="/order">
+                            <Image 
+                                src={Order} 
+                                alt="order"
+                                className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
+                                onLoadingComplete={() => setIsLoading(false)} 
+                            />
                         </Link>
-                        <Link className="text-[18px] block  pt-1 icons" href="likes">
-                            <ion-icon name="heart"></ion-icon>
+                        <Link className="text-[18px] block pt-1 icons" href="/favorites">
+                            <Image 
+                                src={Favorites} 
+                                alt="favorites"  
+                                className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
+                                onLoadingComplete={() => setIsLoading(false)} 
+                            /> 
                         </Link>
                     </div>
                 </div>
@@ -80,29 +105,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-
-
-
-// const Navbar = () => {
-//     return (
-//         <div className="flex justify-between items-center px-4 py-3">
-//             <div className="flex items-center gap-5">
-//                 <Link href="/shoes">Shoes</Link>
-//                 <Link href="/clothes">Clothes</Link>
-//                 <Link href="/accessories">Accessories</Link>
-//             </div>
-//             <Link href="">
-//                 <Image src={Logo} alt="img" />
-//             </Link>
-//             <div className="flex items-center gap-6">
-//                 <input type="text" placeholder="Search..." className="py-2 px-3 border-b-2 border-slate-600 outline-white" />
-//                 <Image src={Login} alt="login" />
-//                 <Image src={Order} alt="order" />
-//                 <Image src={Favorites} alt="favorites" />
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default Navbar

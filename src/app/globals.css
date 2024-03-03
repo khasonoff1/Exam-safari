@@ -112,3 +112,9 @@
         border-width: 10px;
     }
 }
+.sliderBg {
+    background-image: url("../assets/Logo.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
