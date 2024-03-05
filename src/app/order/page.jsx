@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
-import CustomImage from "@/components/image";
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import { useParams } from "next/navigation";
+import CustomImage from "@/components/image";
 
 const OrderPage = () => {
     const [total, setTotal] = useState(0);
@@ -62,7 +63,7 @@ const OrderPage = () => {
     return (
         <>
             {products.length ? (
-                <div className="h-screen bg-gray-100 pt-20">
+                <div className="min-h-screen bg-gray-100 pt-20">
                     <h1 className="mb-10 text-center text-2xl font-bold">Cart Items</h1>
                     <div className="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
                         <div className="rounded-lg md:w-2/3">
@@ -156,16 +157,18 @@ const OrderPage = () => {
                                 <p className="text-lg font-bold">Total</p>
                                 <div className="">
                                     <p className="mb-1 text-lg font-bold">
-                                        {(total + 20).toLocaleString("en-US", {
+                                        {(total + 10).toLocaleString("en-US", {
                                             currency: "usd",
                                             style: "currency",
                                         })}
                                     </p>
                                 </div>
                             </div>
-                            <button className="mt-6 w-full rounded-md bg-blue-500 py-4 font-medium  text-blue-50 hover:bg-blue-600">
-                                Check out
-                            </button>
+                            <Link href="/">
+                                <button className="mt-6 w-full rounded-md bg-[#ED165F] py-4 font-medium  text-white">
+                                    Check out
+                                </button>
+                            </Link>
                         </div>
                     </div>
                 </div>

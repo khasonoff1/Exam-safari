@@ -34,7 +34,7 @@ export function Slider() {
                             <Card>
                                 <CardContent className="hero-bg flex w-full h-[490px] items-center justify-center py-12 bg-[#ED165F]">
                                     <Image src={HeroImg} height={490} alt="img" className={`object-contain duration-700 ease-in-out ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
-                                        onLoadingComplete={() => setIsLoading(false)} />
+                                        onLoad={() => setIsLoading(false)} />
                                 </CardContent>
                             </Card>
                         </div>

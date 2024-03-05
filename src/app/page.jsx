@@ -1,11 +1,9 @@
 import Hero from "@/components/hero";
-import PaginationPage from "@/components/pagination";
 import Products from "@/components/products";
 
 const HomePage = async () => {
     const res = await fetch("https://fakestoreapi.com/products");
     const products = await res.json();
-    const itemsPage = 8;
 
     return (
         <main className="min-h-screen max-w-7xl mx-auto px-8 xl:px-0 mt-10">
@@ -24,9 +22,6 @@ const HomePage = async () => {
                 {products.map((product) => (
                     <Products key={product.id} product={product} />
                 ))}
-            </div>
-            <div>
-                <PaginationPage data={products} itemsPerPage={itemsPage} />
             </div>
         </main>
     );

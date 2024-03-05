@@ -84,7 +84,7 @@ const Navbar = () => {
                                 src={Login}
                                 alt="login"
                                 className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
-                                onLoadingComplete={() => setIsLoading(false)}
+                                onLoad={() => setIsLoading(false)}
                             />
                         </Link>
                         <Link className="text-[18px] block pt-1 icons" href="/order">
@@ -92,7 +92,7 @@ const Navbar = () => {
                                 src={Order}
                                 alt="order"
                                 className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
-                                onLoadingComplete={() => setIsLoading(false)}
+                                onLoad={() => setIsLoading(false)}
                             />
                         </Link>
                         <Link className="text-[18px] block pt-1 icons" href="/favorites">
@@ -100,7 +100,7 @@ const Navbar = () => {
                                 src={Favorites}
                                 alt="favorites"
                                 className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
-                                onLoadingComplete={() => setIsLoading(false)}
+                                onLoad={() => setIsLoading(false)}
                             />
                         </Link>
                     </div>
