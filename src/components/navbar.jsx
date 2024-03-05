@@ -43,6 +43,12 @@ const Navbar = () => {
                         </Link>
                         <Link
                             className="font-semibold text-[14px] loading-[18px] tracking-[0.2px] px-2 py-[10px]"
+                            href="/products"
+                        >
+                            All Products
+                        </Link>
+                        <Link
+                            className="font-semibold text-[14px] loading-[18px] tracking-[0.2px] px-2 py-[10px]"
                             href="/clothes"
                         >
                             Clothes
@@ -78,24 +84,24 @@ const Navbar = () => {
                                 src={Login}
                                 alt="login"
                                 className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
-                                onLoadingComplete={() => setIsLoading(false)} 
+                                onLoadingComplete={() => setIsLoading(false)}
                             />
                         </Link>
                         <Link className="text-[18px] block pt-1 icons" href="/order">
-                            <Image 
-                                src={Order} 
+                            <Image
+                                src={Order}
                                 alt="order"
                                 className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
-                                onLoadingComplete={() => setIsLoading(false)} 
+                                onLoadingComplete={() => setIsLoading(false)}
                             />
                         </Link>
                         <Link className="text-[18px] block pt-1 icons" href="/favorites">
-                            <Image 
-                                src={Favorites} 
-                                alt="favorites"  
+                            <Image
+                                src={Favorites}
+                                alt="favorites"
                                 className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
-                                onLoadingComplete={() => setIsLoading(false)} 
-                            /> 
+                                onLoadingComplete={() => setIsLoading(false)}
+                            />
                         </Link>
                     </div>
                 </div>
