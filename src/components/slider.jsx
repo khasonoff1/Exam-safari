@@ -11,7 +11,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
-import HeroImg from "@/assets/Logo.png"
+import HeroImg from "@/assets/heroImg.png"
 
 export function Slider() {
     const carouselRef = useRef(null);
@@ -32,8 +32,8 @@ export function Slider() {
                     <CarouselItem key={index}>
                         <div className="p-1">
                             <Card>
-                                <CardContent className="flex h-[490px] items-center justify-center p-6 bg-[#ED165F]">
-                                    <Image src={HeroImg} alt="img" className={`object-contain duration-700 ease-in-out group-hover:opacity-75 ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
+                                <CardContent className="hero-bg flex w-full h-[490px] items-center justify-center py-12 bg-[#ED165F]">
+                                    <Image src={HeroImg} height={490} alt="img" className={`object-contain duration-700 ease-in-out ${isLoading ? "scale-110 blur-2xl grayscale" : "scale-100 blur-0 grayscale-0"}`}
                                         onLoadingComplete={() => setIsLoading(false)} />
                                 </CardContent>
                             </Card>

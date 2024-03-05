@@ -15,21 +15,13 @@ const LoginPage = () => {
         confirmAccount: "",
     });
 
-    // console.log("email", formData.email);
-    // console.log("password", formData.password);
-    // console.log("firstname", formData.first_name);
-    // console.log("lastname", formData.lastName);
-    // console.log("createaccot", formData.createAccount);
-    // console.log("confirm", formData.confirmAccount);
-
     const handleBtn = () => {
-        console.log("Hello World");
         route.push("/");
     };
 
     return (
         <div className="w-full h-[100vh] flex mb-40">
-            <div className="flex justify-around pt-[100px] w-full h-[100vh] items-center">
+            <div className="flex justify-around w-full h-[100vh] items-center">
                 <div className="flex flex-col gap-5">
                     <h1 className="text-[30px] capitalize font-bold">hello there</h1>
                     <p className="text-[20px] font-normal capitalize mb-4">

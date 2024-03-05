@@ -118,9 +118,9 @@
         border-width: 10px;
     }
 }
-.sliderBg {
+.hero-bg {
     background-image: url("../assets/Logo.png");
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
 }
